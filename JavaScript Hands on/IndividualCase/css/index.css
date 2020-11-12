@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+.banner {
+  height: 100px;
+  width: 100%;
+  background-color: black;
+  text-align: right;
+}
+
+.halfed {
+  float: left;
+  width: auto;
+  padding: 10px;
+}
+
+.whole:after {
+  display: table;
+  clear: both;
+}
