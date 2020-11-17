@@ -1,7 +1,12 @@
+// document.getElementById("submitButton").addEventListener("click", compare());
+function eventListen() {
+  document.getElementById("submitButton").addEventListener("click", compare());
+}
+
 function compare() {
-  let suit1 = document.getElementById('suit1').value
-  let suit2 = document.getElementById('suit2').value
-  let output = ""
+  let suit1 = document.getElementById('suit1').value;
+  let suit2 = document.getElementById('suit2').value;
+  let output = "";
 
   if (suit1 == 't45') {
     suit1 = {
@@ -45,15 +50,15 @@ function compare() {
   console.log(suit1.name);
   console.log(suit1.bd);
 
-  let bdDif = suit1.bd - suit2.bd
+  let bdDif = suit1.bd - suit2.bd;
 
   if (bdDif > 0) {
-    output += suit1.name + " has " + bdDif + " more balsitic defence than " + suit2.name
+    output += suit1.name + " has " + bdDif + " more balsitic defence than " + suit2.name;
   } else if (bdDif == 0) {
-    output += suit1.name + " has the same balsitic defence as " + suit2.name
+    output += suit1.name + " has the same balsitic defence as " + suit2.name;
   } else if (bdDif < 0) {
-    output += suit1.name + " has " + Math.abs(bdDif) + " less balsitic defence than " + suit2.name
+    output += suit1.name + " has " + Math.abs(bdDif) + " less balsitic defence than " + suit2.name;
   }
 
-  document.getElementById("output").innerHTML = output
+  document.getElementById("output").innerHTML = output;
 }

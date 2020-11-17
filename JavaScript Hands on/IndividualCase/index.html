@@ -52,7 +52,7 @@
     </p>
 
     <h1> Stat Comparison </h1>
-    <form action="/action_page.php">
+    <form action="/action_page.php" onload="eventListen();">
       <label for="suit1">Suit 1:</label>
       <select name="suit1" id="suit1">
         <option value="t45">T-45</option>
@@ -67,7 +67,7 @@
         <option value="t60">T-60</option>
       </select>
       <br>
-      <button type="button" name="Submit" onclick="compare();">Submit</button>
+      <button id="submitButton" type="button" name="Submit" onclick="compare();">Submit</button>
     </form>
   </main>
   <p id="output"></p>
