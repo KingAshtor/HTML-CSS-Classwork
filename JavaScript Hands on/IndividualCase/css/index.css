@@ -1,53 +1,110 @@
-/* CSS RESET */
-body, header, nav, main, footer, img, h1 {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-family: Verdana
+@media only screen and (min-width:768px) {
+
+  /* CSS RESET */
+  body, header, nav, main, footer, img, h1 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Verdana
+  }
+
+  /* Style rules for navigation area */
+  nav {
+    height: 100px;
+    background-color: #000000;
+  }
+
+  nav li.Divider, nav a:hover {
+    color: #ffd387;
+  }
+
+  nav ul, nav li, nav a {
+    display: inline;
+    list-style-type: none;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 43px;
+    padding: 0;
+    padding-top: auto;
+    list-style-type: none;
+  }
+
+  .banner {
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    text-align: right;
+    float: right;
+    width: auto;
+  }
+
+  .halfed {
+    float: left;
+    width: auto;
+    padding: 10px;
+  }
+
+  .whole:after {
+    display: table;
+    clear: both;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
 }
 
-/* Style rules for navigation area */
-nav {
-  height: 100px;
-  padding-top: auto;
-}
+@media only screen and (max-width:767px) {
 
-nav, nav a {
-  background-color: #000000;
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 28px;
-}
+  /* CSS RESET */
+  nav li.Divider {
+    display: none;
+  }
 
-nav, nav a:hover {
-  color: #ffd387;
-}
+  nav ul, nav li, nav a {
+    list-style-type: none;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 5px;
+    list-style-type: none;
+  }
 
-nav:after {
-  display: table;
-  clear: both;
-}
+  nav li {
+    display: block;
+    padding: 0px;
+    text-align: center;
+    border: solid;
+    border-color: #ffd387;
+    background-color: #000000;
+    font-size: 43px;
+  }
 
-* {
-  box-sizing: border-box;
-}
+  .banner {
+    display: none;
+  }
 
-.banner {
-  height: 100px;
-  width: 100%;
-  background-color: black;
-  text-align: right;
-  float: right;
-  width: auto;
-}
+  .halfed {
+    text-align: center;
+    width: auto;
+    padding: 10px;
+  }
 
-.halfed {
-  float: left;
-  width: auto;
-  padding: 10px;
-}
+  .whole:after {
+    display: table;
+    clear: both;
+  }
 
-.whole:after {
-  display: table;
-  clear: both;
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  body {
+    font-size: 24px;
+  }
+
+  .sticky {
+  }
 }
