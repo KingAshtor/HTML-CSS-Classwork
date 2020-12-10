@@ -1,0 +1,112 @@
+/* CSS RESET */
+body, header, nav, main, footer, img, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #c0c0c0
+}
+
+h1 {
+  color: #440000;
+}
+
+a {
+  color: cyan;
+}
+
+.bordered {
+  border: solid;
+  border-color: #ffffff;
+}
+
+footer {
+  text-align: center;
+}
+
+@media only screen and (min-width:768px) {
+
+  /* Style rules for the nav on desktop*/
+  nav {
+    background-color: #505050;
+  }
+
+  nav a:hover {
+    color: #ffd387;
+  }
+
+  nav ul, nav li, nav a {
+    display: inline;
+    list-style-type: none;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 43px;
+    padding: 0;
+    padding-top: auto;
+    list-style-type: none;
+  }
+
+  .whole {
+    width: 100%;
+    height: 80%;
+  }
+
+  .leftHalf {
+    float: left;
+    padding: 2.5%;
+    padding-right: none;
+    width: 45%;
+    height: 100%;
+  }
+
+  .rightHalf {
+    padding: 2.5%;
+    padding-right: none;
+    float: none;
+    height: 100%;
+  }
+
+  .whole:after {
+    display: table;
+    clear: both;
+    float: none;
+  }
+
+  img {
+    width: 35%;
+  }
+  .leftHalf img {
+    width: 90%
+  }
+}
+
+@media only screen and (max-width:767px) {
+
+  /* Style rules for the nav on mobile */
+  nav ul, nav li, nav a {
+    list-style-type: none;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 5px;
+    list-style-type: none;
+  }
+
+  nav li {
+    display: block;
+    padding: 0px;
+    text-align: center;
+    border: solid;
+    border-color: #ffffff;
+    background-color: #505050;
+    font-size: 43px;
+  }
+
+  h1, .leftHalf, .rightHalf {
+    text-align: center;
+    float: none;
+  }
+
+  img {
+    width: 100%
+  }
+}

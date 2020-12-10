@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ashton Sisson</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body onload="date()">
+  <nav>
+    <ul>
+      <li><a href="index.html">Index</a></li>
+      <li><a href="second.html">Second</a></li>
+      <li><a href="javascript.html">JavaScript</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Pool Volume Calulator</h1>
+    <form>
+      <label for="length">Length</label>
+      <input type="number" id="length" value="">
+      <label for="width">Width</label>
+      <input type="number" id="width" value="">
+      <label for="depth">Depth</label>
+      <input type="number" id="depth" value="">
+      <button type="button" id="go" onclick="poolUpdate()">Go</button>
+    </form>
+
+    <h2 id="out"></h2>
+    <br><br><br><br><br>
+    <p id=1to100></p>
+
+  </main>
+
+  <footer>
+    <p id="dateOutput">Date Modified: Null</p>
+    <p>Project by Ashton L. Sisson</p>
+    <p>Midterm Completed 11-25-2020</p>
+  </footer>
+
+  <script type="text/javascript">
+    function date() {
+      let dateMod = document.lastModified;
+      document.getElementById("dateOutput").innerHTML = "Last modified on " + dateMod;
+      o2oh()
+    }
+
+    function poolUpdate() {
+      let l = document.getElementById("length").value;
+      let w = document.getElementById("width").value;
+      let d = document.getElementById("depth").value;
+      poolCalc(l, w, d)
+    }
+
+    function poolCalc(l, w, d) {
+      if (l <= 0 || w <= 0 || d <= 0) {
+        document.getElementById("out").innerHTML = "Invalid Input: all numbers must be greater than zero for a pool to be possible"
+      } else {
+        let t = l * w * d
+        document.getElementById("out").innerHTML = "Pool volume is " + t
+      }
+    }
+
+    function o2oh() {
+      for (var i = 0; i <= 100; i++) {
+        let out2 = 100 - i
+        document.getElementById("1to100").innerHTML += out2 + ", "
+      }
+    }
+  </script>
+</body>
+
+</html>
