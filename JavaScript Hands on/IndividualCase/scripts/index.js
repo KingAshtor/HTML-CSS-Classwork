@@ -3,8 +3,13 @@ window.onscroll = function() {
   sticky();
 };
 
+//simplifies getElementById
+function getEleId(input) {
+   return document.getElementById(input);
+}
+
 function sticky() {
-  let nav = document.getElementById("navHeader")
+  let nav = getEleId("navHeader")
   let sticky = nav.offsetTop;
 
   if (window.pageYOffset > sticky) {
@@ -17,13 +22,13 @@ function sticky() {
 
 //code for calculator tool
 function eventListen() {
-  document.getElementById("submitButton").addEventListener("click", compare());
+  getEleId("submitButton").addEventListener("click", compare());
 }
 
 
 function compare() {
-  let suit1 = document.getElementById('suit1').value;
-  let suit2 = document.getElementById('suit2').value;
+  let suit1 = getEleId('suit1').value;
+  let suit2 = getEleId('suit2').value;
   let output = "";
 
   try {
@@ -81,9 +86,9 @@ function compare() {
       output += suit1.name + " has " + Math.abs(bdDif) + " less balsitic defence than " + suit2.name;
     }
 
-    document.getElementById("output").innerHTML = output;
+    getEleId("output").innerHTML = output;
   } catch (e) {
-    document.getElementById("output").innerHTML = e;
+    getEleId("output").innerHTML = e;
   }
 }
 
