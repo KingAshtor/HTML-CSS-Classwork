@@ -98,7 +98,7 @@ main p {
   border-radius: 8px;
 }
 
-#contact .email-link {
+#contact .email-link, #rental h2 {
   color: #4645a8;
   text-decoration: none;
   font-weight: bold;
@@ -124,6 +124,61 @@ main p {
   border: 5px solid #373684;
   width: 95%;
   height: 50%;
+}
+
+/* syle rules for table */
+table {
+  border: 1px solid #373684;
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 100%;
+}
+
+caption {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 1%;
+}
+
+th, td {
+  border: 1px solid #373684;
+  padding: 2%;
+}
+
+th {
+  background-color: #373684;
+  color: #ffffff;
+  font-size: 1.15em;
+}
+
+tr:nth-child(odd) {
+  background-color: #b7b7e1
+}
+
+/* style rules for form elements */
+fieldset, input {
+  margin-bottom: 2%;
+}
+
+fieldset legend {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  padding-top: 3%;
+}
+
+form #submit {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 3%;
+  background-color: #b7b7e1;
+  font-size: 1em;
 }
 
 /* style rules for footer content */
@@ -208,6 +263,15 @@ figcaption {
     height: 450px;
   }
 
+  /* Tablet viewport: syle rule for form element */
+  form {
+    width: 70%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: auto auto;
@@ -268,6 +332,22 @@ figcaption {
 
   aside {
     grid-column: 1 / span 4;
+  }
+
+  /* Desktop Viewport: style rules for table */
+  table {
+    width: 70%;
+  }
+
+  /* Desktop viewport: syle rules for form elements */
+  .form-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+  }
+
+  .btn {
+    grid-column: 1 / span 2;
   }
 }
 
