@@ -1,12 +1,12 @@
+//simplifies getElementById
+function getEleId(input) {
+  return document.getElementById(input);
+}
+
 // code for sticky nav
 window.onscroll = function() {
   sticky();
 };
-
-//simplifies getElementById
-function getEleId(input) {
-   return document.getElementById(input);
-}
 
 function sticky() {
   let nav = getEleId("navHeader")
@@ -173,4 +173,78 @@ function validateRequired() {
     errorDiv.innerHTML = msg;
     formValidity = false;
   }
+}
+
+//code for time until calculator tool
+function eventListen2() {
+  getEleId("submitButton2").addEventListener("click", timeSinceSetup());
+}
+
+function timeSinceSetup() {
+  // get paragraphs and date from input it then splits it
+  let dateIn = getEleId("dateIn");
+  let dateCur = getEleId("dateCur")
+  let dateInput = document.querySelector('input[type="date"]').value
+  let dateSplit = dateInput.split("-");
+
+  //get current date
+  let today = new Date();
+  let dayCur = today.getDate();
+  let monthCur = today.getMonth() + 1;
+  let yearCur = today.getFullYear();
+
+  // Input month, day, year
+  let dayIn = parseInt(dateSplit[2]);
+  let monthIn = parseInt(dateSplit[1]);
+  let yearIn = parseInt(dateSplit[0]);
+
+  console.log(dayIn);
+  console.log(monthIn);
+  console.log(yearIn);
+
+  dateCur.innerHTML = "Current Date:" + monthCur + "-" + dayCur + "-" + yearCur;
+  dateIn.innerHTML = "Inputed Date:" + monthIn + "-" + dayIn + "-" + yearIn;
+
+  timeSinceCalc(dayIn, monthIn, yearIn, dayCur, monthCur, yearCur);
+}
+
+// calculates time since the date punched in
+function timeSinceCalc(dayIn, monthIn, yearIn, dayCur, monthCur, yearCur) {
+
+  // gets turns to days since zero bc for quick math
+  let daysIn = dateToDays(dayIn, monthIn, yearIn);
+  let daysCur = dateToDays(dayCur, monthCur, yearCur);
+
+  // Does the Math
+  let daysDif = daysCur - daysIn
+
+  // converts value back to days months and years in a string to output
+  let dateOut = daysToDate(daysDif)
+
+  // sets the dateDif to the diffence
+  getEleId("dateDif").innerHTML = dateOut
+}
+
+// function that convets month days and years to just days
+function dateToDays(day, month, year) {
+  day += (year * 365 + month * 31);
+  return day;
+}
+
+// function to convert days back into days years and months
+function daysToDate(daysIn) {
+  let days = daysIn
+  let years = 0;
+  let months = 0;
+  let x = 0;
+
+  x = days / 365
+  years = Math.floor(x) //the whole number is years
+  days = (x - Math.floor(x)) * 365 //subtracts the whole nuber (years) and turns the rest back to days
+
+  x = days / 31
+  months = Math.floor(x) //the whole number is months
+  days = Math.round((x - Math.floor(x)) * 31) //subtracts the whole nuber (months) and turns the rest back to days
+
+  return "The inputed date is " + years + " years, " + months + " months, and " + days + " days ago"
 }

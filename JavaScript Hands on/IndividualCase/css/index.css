@@ -55,11 +55,11 @@
     width: 100%
   }
 
-  #subLink {
+  .linkButton {
     text-align: center;
   }
 
-  #subLink a {
+  .linkButton a {
     border: solid;
     border-color: #ffd387;
     border width: 3px;
@@ -69,7 +69,7 @@
     color: #ffffff;
   }
 
-  #subLink a:hover {
+  .linkButton a:hover {
     background-color: #ffd387;
     border-color: #000000;
     color: #000000;
@@ -147,13 +147,13 @@
 
   .sticky {}
 
-  #subLink {
+  .linkButton {
     display: block;
     padding: 10%;
     width: 90%;
   }
 
-  #subLink a {
+  .linkButton a {
     border: solid;
     border-color: #ffd387;
     border width: 3px;
@@ -166,7 +166,6 @@
   #subForm {
     border: solid;
     border-width: 6px;
-
     background-color: #ffd387;
     text-align: center;
   }
