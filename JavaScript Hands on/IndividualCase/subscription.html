@@ -30,8 +30,23 @@
       <img src="https://cdn3.dualshockers.com/wp-content/uploads/2018/06/Fallout_76_T51b_F_1528640228-ds1-1340x1340.jpg" alt="Webpage banner of power armor" height="100%">
     </div>
 
-    <nav>
+    <nav class="desktop">
       <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="Divider">&#9830;</li>
+        <li><a href="t45.html">T-45</a></li>
+        <li class="Divider">&#9830;</li>
+        <li><a href="t51.html">T-51</a></li>
+        <li class="Divider">&#9830;</li>
+        <li><a href="t60.html">T-60</a></li>
+      </ul>
+    </nav>
+
+    <nav class="mobile">
+      <a class="menu-icon" onclick="hamburger()">
+        <div>&#9776;</div>
+      </a>
+      <ul id="menuItems">
         <li><a href="index.html">Home</a></li>
         <li class="Divider">&#9830;</li>
         <li><a href="t45.html">T-45</a></li>
@@ -44,7 +59,6 @@
   </div>
 
   <header>
-
   </header>
 
   <main>
@@ -370,6 +384,49 @@
             <div class="col">
               <input type="radio" name="game" id="fo00" value="fo00">
               <label for="fo00">Other</label>
+            </div>
+          </div>
+
+          <br>
+          <label for="game" id="gameLabel"> <b> What was your Fallout games have you played? </b> </label>
+
+          <div class="row">
+            <div class="col">
+              <input type="checkbox" name="game" id="fo03" value="Fallout 3" onchange="gamesPlayed()">
+              <label for="f03">Fallout 3</label>
+            </div>
+
+            <div class="col">
+              <input type="checkbox" name="game" id="fonv" value="Fallout:New Vegas" onchange="gamesPlayed()">
+              <label for="fonv">Fallout:New Vegas</label>
+            </div>
+
+            <div class="col">
+              <input type="checkbox" name="game" id="fo04" value="Fallout 4" onchange="gamesPlayed()">
+
+              <label for="fo04">Fallout 4</label>
+            </div>
+
+            <div class="col">
+              <input type="checkbox" name="game" id="fo76" value="Fallout 76" onchange="gamesPlayed()">
+              <label for="fo76">Fallout 76</label>
+            </div>
+
+            <div class="col">
+              <input type="checkbox" name="game" id="fo00" value="Other Fallout Game" onchange="gamesPlayed()">
+              <label for="fo00">Other</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="GameOutput" id="GameOutputLabel"> <b> Items Selected </b> </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p id="gameOutput"></p>
             </div>
           </div>
         </fieldset>

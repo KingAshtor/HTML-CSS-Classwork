@@ -3,6 +3,15 @@ function getEleId(input) {
   return document.getElementById(input);
 }
 
+
+
+//simplifies getElementsByTagName (got tired of typeing it)
+function getEleTag(input) {
+  return document.getElementsByTagName(input);
+}
+
+
+
 // code for sticky nav
 window.onscroll = function() {
   sticky();
@@ -20,10 +29,12 @@ function sticky() {
 }
 
 
+
 //code for calculator tool
 function eventListen() {
   getEleId("submitButton").addEventListener("click", compare());
 }
+
 
 
 function compare() {
@@ -91,6 +102,7 @@ function compare() {
     getEleId("output").innerHTML = e;
   }
 }
+
 
 
 // code for subform
@@ -175,6 +187,26 @@ function validateRequired() {
   }
 }
 
+function gamesPlayed() {
+  let playedGames = [];
+  let checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+
+  for (var i = 0; i < checkboxes.length; i++) {
+    playedGames.push(checkboxes[i].value);
+  }
+  console.log(playedGames);
+  updateGamesPlayed(playedGames);
+}
+
+function updateGamesPlayed(playedGames) {
+  getEleId("gameOutput").innerHTML = ""
+  for (var i = 0; i < playedGames.length; i++) {
+    if (playedGames[i] == "on") {} else {
+      getEleId("gameOutput").innerHTML += playedGames[i] + "<br>"
+    }
+  }
+}
+
 //code for time until calculator tool
 function eventListen2() {
   getEleId("submitButton2").addEventListener("click", timeSinceSetup());
@@ -247,4 +279,17 @@ function daysToDate(daysIn) {
   days = Math.round((x - Math.floor(x)) * 31) //subtracts the whole nuber (months) and turns the rest back to days
 
   return "The inputed date is " + years + " years, " + months + " months, and " + days + " days ago"
+}
+
+
+
+// code for the hamburger menuItems
+function hamburger() {
+  let menu = getEleId("menuItems");
+
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
 }
