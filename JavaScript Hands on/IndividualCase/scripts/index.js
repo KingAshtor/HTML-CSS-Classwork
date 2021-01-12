@@ -237,6 +237,19 @@ function timeSinceSetup() {
   dateCur.innerHTML = "Current Date:" + monthCur + "-" + dayCur + "-" + yearCur;
   dateIn.innerHTML = "Inputed Date:" + monthIn + "-" + dayIn + "-" + yearIn;
 
+  //validates date
+  if (dayIn < 1 || dayIn > 31) {
+    dateIn.innerHTML = "Invald (days must be 1-31)"
+  }
+
+  if (monthIn < 1 || monthIn > 12) {
+    dateIn.innerHTML = "Invald (months must be 1-12)"
+  }
+
+  if (yearIn < 1 || yearIn > yearCur) {
+    dateIn.innerHTML = "Invald (years must be greator than one or less than or equal to the current year)"
+  }
+
   timeSinceCalc(dayIn, monthIn, yearIn, dayCur, monthCur, yearCur);
 }
 
